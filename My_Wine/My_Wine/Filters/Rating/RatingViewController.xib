@@ -69,9 +69,9 @@
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bf5-V2-M05" customClass="CosmosView" customModule="Cosmos">
-                    <rect key="frame" x="16" y="362" width="361" height="128"/>
+                    <rect key="frame" x="16" y="386" width="361" height="80"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="128" id="H7X-gf-ACj"/>
+                        <constraint firstAttribute="height" constant="80" id="cLc-4s-tJf"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="starFill"/>
@@ -84,10 +84,12 @@
                 <constraint firstAttribute="trailing" secondItem="JiH-WR-qrY" secondAttribute="trailing" constant="18" id="2q9-fh-PTe"/>
                 <constraint firstItem="bf5-V2-M05" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="2sF-mk-PXd"/>
                 <constraint firstItem="AQ8-MC-y9e" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="29" id="3l0-e4-1ti"/>
+                <constraint firstItem="2jE-nl-03T" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bf5-V2-M05" secondAttribute="bottom" constant="16" id="EHf-mx-OgB"/>
                 <constraint firstItem="AQ8-MC-y9e" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="42" id="GRT-sP-ekY"/>
                 <constraint firstItem="bf5-V2-M05" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Hrv-OM-UBK"/>
                 <constraint firstAttribute="trailing" secondItem="bf5-V2-M05" secondAttribute="trailing" constant="16" id="M9U-5R-n5D"/>
                 <constraint firstItem="bf5-V2-M05" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QV4-MN-ylM"/>
+                <constraint firstItem="bf5-V2-M05" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AQ8-MC-y9e" secondAttribute="bottom" constant="16" id="SaB-zB-tfD"/>
                 <constraint firstAttribute="trailing" secondItem="2jE-nl-03T" secondAttribute="trailing" constant="14" id="cha-89-Mwo"/>
                 <constraint firstItem="JiH-WR-qrY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="gHb-Sz-eII"/>
                 <constraint firstAttribute="bottom" secondItem="2jE-nl-03T" secondAttribute="bottom" constant="35" id="zvk-ss-MPL"/>

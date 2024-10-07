@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import CoreData
 
 class CatalogViewController: UIViewController {
 
@@ -20,10 +21,12 @@ class CatalogViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         subscribe()
+        viewModel.fetchData()
     }
     
     func setupUI() {
         searchTextField.font = .robotoRegular(size: 16)
+        searchTextField.delegate = self
         filterButton.forEach { button in
             button.titleLabel?.font = UIFont.jostLight(size: 14)
             button.layer.borderWidth = 1
@@ -58,6 +61,11 @@ class CatalogViewController: UIViewController {
     @objc func clickedAddWine() {
         let wineFormVC = WineFormViewController(nibName: "WineFormViewController", bundle: nil)
         wineFormVC.modalPresentationStyle = .overFullScreen
+        wineFormVC.completion = { [weak self] in
+            if let self = self {
+                self.viewModel.fetchData()
+            }
+        }
         self.present(wineFormVC, animated: true)
     }
 
@@ -67,7 +75,7 @@ class CatalogViewController: UIViewController {
         filterVC.transitioningDelegate = self
         filterVC.delegate = self
         filterVC.filterType = .year
-        filterVC.selectedFilter = String(viewModel.filterWine.filterYear ?? 0)
+        filterVC.selectedFilter = viewModel.filterWine.filterYear
         present(filterVC, animated: true, completion: nil)
     }
     
@@ -162,5 +170,15 @@ class HalfScreenPresentationController: UIPresentationController {
     }
     
     override func dismissalTransitionWillBegin() {
+    }
+}
+
+extension CatalogViewController: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        viewModel.filter(by: textField.text)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
     }
 }

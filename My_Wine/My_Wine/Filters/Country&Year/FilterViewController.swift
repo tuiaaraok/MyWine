@@ -29,12 +29,19 @@ class FilterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if traitCollection.userInterfaceIdiom == .pad {
+            preferredContentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 2)
+        }
         setupUI()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.view.roundCorners([.topLeft, .topRight], radius: 30)
+        self.view.layer.sublayers?.removeAll(where: { $0 is EdgeShadowLayer })
+        self.view.layer.addSublayer(EdgeShadowLayer(forView: self.view))
     }
 
     func setupUI() {
-        self.view.roundCorners([.topLeft, .topRight], radius: 30)
-        self.view.layer.addSublayer(EdgeShadowLayer(forView: self.view))
         titleLabel.font = .jostRegular(size: 24)
         resetAllButton.titleLabel?.font = .jostRegular(size: 16)
         clearFilterButton.titleLabel?.font = .jostRegular(size: 16)

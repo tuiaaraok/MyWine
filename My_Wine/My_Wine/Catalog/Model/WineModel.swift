@@ -8,14 +8,14 @@
 import Foundation
 
 struct WineModel {
-    var id: UUID
+    var id: UUID = UUID()
     var name: String?
     var photo: Data?
     var grape: String?
     var country: String?
-    var year: Int?
+    var year: String?
     var qualities: String?
-    var rating: Double
-    var isFavorite: Bool
-    var isMyWine: Bool
+    var rating: Double = 0
+    var isFavorite: Bool = false
+    var isMyWine: Bool = false
 }

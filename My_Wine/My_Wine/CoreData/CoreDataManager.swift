@@ -13,7 +13,7 @@ class CoreDataManager {
     private init() {}
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Marketplace")
+        let container = NSPersistentContainer(name: "My_Wine")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -30,7 +30,7 @@ class CoreDataManager {
                 let results = try backgroundContext.fetch(fetchRequest)
                 var wineModels: [WineModel] = []
                 for result in results {
-                    let wineModel = WineModel(id: result.id ?? UUID(), name: result.name, photo: result.photo, grape: result.grape, country: result.country, year: Int(result.year), qualities: result.qualities, rating: result.rating, isFavorite: result.isFavortie, isMyWine: result.isMyWine)
+                    let wineModel = WineModel(id: result.id ?? UUID(), name: result.name, photo: result.photo, grape: result.grape, country: result.country, year: result.year, qualities: result.qualities, rating: result.rating, isFavorite: result.isFavorite, isMyWine: result.isMyWine)
                     wineModels.append(wineModel)
                 }
                 DispatchQueue.main.async {
@@ -62,17 +62,21 @@ class CoreDataManager {
                 }
                 wine.country = wineModel.country
                 wine.grape = wineModel.grape
-                wine.isFavortie = wineModel.isFavorite
+                wine.isFavorite = wineModel.isFavorite
                 wine.isMyWine = wineModel.isMyWine
                 wine.name = wineModel.name
                 wine.photo = wineModel.photo
                 wine.qualities = wineModel.qualities
                 wine.rating = wineModel.rating
-                wine.year = Int32(wineModel.year ?? 0)
+                wine.year = wineModel.year
                 try backgroundContext.save()
-                completion(nil)
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
             } catch {
-                completion(error)
+                DispatchQueue.main.async {
+                    completion(error)
+                }
             }
         }
     }

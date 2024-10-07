@@ -9,7 +9,7 @@ import Foundation
 
 struct Filter {
     var filterRating: Double?
-    var filterYear: Int?
+    var filterYear: String?
     var filterCountry: String?
 }
 

@@ -29,6 +29,9 @@ class RatingViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        self.view.roundCorners([.topLeft, .topRight], radius: 30)
+        self.view.layer.sublayers?.removeAll(where: { $0 is EdgeShadowLayer })
+        self.view.layer.addSublayer(EdgeShadowLayer(forView: self.view))
         ratingView.settings.starSize = Double(ratingView.frame.width / 5) - Double(5)
         ratingView.settings.starMargin = 5
         ratingView.settings.fillMode = .full
@@ -36,8 +39,6 @@ class RatingViewController: UIViewController {
     }
     
     func setupUI() {
-        self.view.roundCorners([.topLeft, .topRight], radius: 30)
-        self.view.layer.addSublayer(EdgeShadowLayer(forView: self.view))
         titleLabel.font = .jostRegular(size: 24)
         resetAllButton.titleLabel?.font = .jostRegular(size: 16)
         clearFilterButton.titleLabel?.font = .jostRegular(size: 16)

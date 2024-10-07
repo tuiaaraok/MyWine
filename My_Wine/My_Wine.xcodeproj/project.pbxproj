@@ -15,6 +15,11 @@
 		6B672BFA2CB45B8A00096C0C /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B672BF92CB45B8A00096C0C /* Filter.swift */; };
 		6B672BFF2CB465CA00096C0C /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B672BFD2CB465CA00096C0C /* RatingViewController.swift */; };
 		6B672C002CB465CA00096C0C /* RatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B672BFE2CB465CA00096C0C /* RatingViewController.xib */; };
+		6B672C032CB4803600096C0C /* WineFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B672C022CB4803600096C0C /* WineFormViewModel.swift */; };
+		6B672C052CB4817800096C0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B672C042CB4817800096C0C /* ViewController.swift */; };
+		6BA95D832CB4926B00429501 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA95D822CB4926B00429501 /* BaseButton.swift */; };
+		6BA95D852CB492DD00429501 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA95D842CB492DD00429501 /* String.swift */; };
+		6BA95D8D2CB49CFD00429501 /* My_Wine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BA95D8B2CB49CFD00429501 /* My_Wine.xcdatamodeld */; };
 		6BC339642CB1D71600B1C345 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC339632CB1D71600B1C345 /* TabBarViewController.swift */; };
 		6BC339662CB1D8D100B1C345 /* Jost-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BC339652CB1D8D100B1C345 /* Jost-Regular.ttf */; };
 		6BC339692CB1E13B00B1C345 /* WineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC339682CB1E13B00B1C345 /* WineModel.swift */; };
@@ -24,7 +29,6 @@
 		6BE1FC0C2CB4112300FD9A5F /* WineCatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE1FC0B2CB4112300FD9A5F /* WineCatalogViewModel.swift */; };
 		6BE1FC0F2CB429D200FD9A5F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE1FC0E2CB429D200FD9A5F /* CoreDataManager.swift */; };
 		6BE1FC212CB434F600FD9A5F /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE1FC202CB434F600FD9A5F /* FilterButton.swift */; };
-		6BE1FC242CB4393A00FD9A5F /* CountryPickerView in Frameworks */ = {isa = PBXBuildFile; productRef = 6BE1FC232CB4393A00FD9A5F /* CountryPickerView */; };
 		6BE1FC292CB44FBE00FD9A5F /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE1FC272CB44FBE00FD9A5F /* FilterViewController.swift */; };
 		6BE1FC2A2CB44FBE00FD9A5F /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BE1FC282CB44FBE00FD9A5F /* FilterViewController.xib */; };
 		6BE1FC2C2CB456F000FD9A5F /* EdgeShadowLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE1FC2B2CB456F000FD9A5F /* EdgeShadowLayer.swift */; };
@@ -34,7 +38,6 @@
 		6BE4DA312CB17DF6003846F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE4DA302CB17DF6003846F4 /* SceneDelegate.swift */; };
 		6BE4DA332CB17DF6003846F4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE4DA322CB17DF6003846F4 /* RootViewController.swift */; };
 		6BE4DA362CB17DF6003846F4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6BE4DA352CB17DF6003846F4 /* Base */; };
-		6BE4DA392CB17DF6003846F4 /* My_Wine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BE4DA372CB17DF6003846F4 /* My_Wine.xcdatamodeld */; };
 		6BE4DA3B2CB17DF8003846F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BE4DA3A2CB17DF8003846F4 /* Assets.xcassets */; };
 		6BE4DA3E2CB17DF8003846F4 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6BE4DA3D2CB17DF8003846F4 /* Base */; };
 		6BE4DA482CB1AB28003846F4 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BE4DA472CB1AB28003846F4 /* Roboto-Regular.ttf */; };
@@ -62,6 +65,11 @@
 		6B672BF92CB45B8A00096C0C /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		6B672BFD2CB465CA00096C0C /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		6B672BFE2CB465CA00096C0C /* RatingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingViewController.xib; sourceTree = "<group>"; };
+		6B672C022CB4803600096C0C /* WineFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineFormViewModel.swift; sourceTree = "<group>"; };
+		6B672C042CB4817800096C0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6BA95D822CB4926B00429501 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		6BA95D842CB492DD00429501 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		6BA95D8C2CB49CFD00429501 /* My_Wine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_Wine.xcdatamodel; sourceTree = "<group>"; };
 		6BC339632CB1D71600B1C345 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		6BC339652CB1D8D100B1C345 /* Jost-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-Regular.ttf"; sourceTree = "<group>"; };
 		6BC339682CB1E13B00B1C345 /* WineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineModel.swift; sourceTree = "<group>"; };
@@ -80,7 +88,6 @@
 		6BE4DA302CB17DF6003846F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6BE4DA322CB17DF6003846F4 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		6BE4DA352CB17DF6003846F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/TabBar.storyboard; sourceTree = "<group>"; };
-		6BE4DA382CB17DF6003846F4 /* My_Wine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_Wine.xcdatamodel; sourceTree = "<group>"; };
 		6BE4DA3A2CB17DF8003846F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BE4DA3D2CB17DF8003846F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BE4DA3F2CB17DF8003846F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,7 +112,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BE1FC242CB4393A00FD9A5F /* CountryPickerView in Frameworks */,
 				6BC339742CB1E96500B1C345 /* Cosmos in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +145,14 @@
 			path = Rating;
 			sourceTree = "<group>";
 		};
+		6B672C012CB4802500096C0C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6B672C022CB4803600096C0C /* WineFormViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		6BC339672CB1DF9700B1C345 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +164,7 @@
 		6BC3396C2CB1E78E00B1C345 /* WineForm */ = {
 			isa = PBXGroup;
 			children = (
+				6B672C012CB4802500096C0C /* ViewModel */,
 				6BC3396D2CB1E79C00B1C345 /* View */,
 			);
 			path = WineForm;
@@ -242,7 +257,7 @@
 				6BE4DA3A2CB17DF8003846F4 /* Assets.xcassets */,
 				6BE4DA3C2CB17DF8003846F4 /* LaunchScreen.storyboard */,
 				6BE4DA3F2CB17DF8003846F4 /* Info.plist */,
-				6BE4DA372CB17DF6003846F4 /* My_Wine.xcdatamodeld */,
+				6BA95D8B2CB49CFD00429501 /* My_Wine.xcdatamodeld */,
 			);
 			path = My_Wine;
 			sourceTree = "<group>";
@@ -256,6 +271,9 @@
 				6B2766632CB4050200D61331 /* ShadowView.swift */,
 				6BE1FC202CB434F600FD9A5F /* FilterButton.swift */,
 				6BE1FC2B2CB456F000FD9A5F /* EdgeShadowLayer.swift */,
+				6B672C042CB4817800096C0C /* ViewController.swift */,
+				6BA95D822CB4926B00429501 /* BaseButton.swift */,
+				6BA95D842CB492DD00429501 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -373,7 +391,6 @@
 			name = My_Wine;
 			packageProductDependencies = (
 				6BC339732CB1E96500B1C345 /* Cosmos */,
-				6BE1FC232CB4393A00FD9A5F /* CountryPickerView */,
 			);
 			productName = My_Wine;
 			productReference = 6BE4DA2B2CB17DF6003846F4 /* My_Wine.app */;
@@ -405,7 +422,6 @@
 			mainGroup = 6BE4DA222CB17DF6003846F4;
 			packageReferences = (
 				6BC339722CB1E96500B1C345 /* XCRemoteSwiftPackageReference "Cosmos" */,
-				6BE1FC222CB4393A00FD9A5F /* XCRemoteSwiftPackageReference "CountryPickerView" */,
 			);
 			productRefGroup = 6BE4DA2C2CB17DF6003846F4 /* Products */;
 			projectDirPath = "";
@@ -449,21 +465,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BE4DA392CB17DF6003846F4 /* My_Wine.xcdatamodeld in Sources */,
 				6BE4DA612CB1D218003846F4 /* CatalogViewController.swift in Sources */,
 				6B672BFA2CB45B8A00096C0C /* Filter.swift in Sources */,
 				6BE4DA672CB1D264003846F4 /* FavoritesViewController.swift in Sources */,
 				6BE4DA5B2CB1D1BB003846F4 /* MyWineViewController.swift in Sources */,
+				6B672C032CB4803600096C0C /* WineFormViewModel.swift in Sources */,
 				6B2766602CB3FA6900D61331 /* BaseTextField.swift in Sources */,
 				6BE4DA332CB17DF6003846F4 /* RootViewController.swift in Sources */,
+				6B672C052CB4817800096C0C /* ViewController.swift in Sources */,
 				6BE1FC0F2CB429D200FD9A5F /* CoreDataManager.swift in Sources */,
 				6BE1FC292CB44FBE00FD9A5F /* FilterViewController.swift in Sources */,
 				6B672BFF2CB465CA00096C0C /* RatingViewController.swift in Sources */,
 				6BE1FC212CB434F600FD9A5F /* FilterButton.swift in Sources */,
+				6BA95D832CB4926B00429501 /* BaseButton.swift in Sources */,
 				6BC339712CB1E7A900B1C345 /* WineFormViewController.swift in Sources */,
 				6BC339692CB1E13B00B1C345 /* WineModel.swift in Sources */,
 				6B2766682CB40CD300D61331 /* WineTableViewCell.swift in Sources */,
+				6BA95D8D2CB49CFD00429501 /* My_Wine.xcdatamodeld in Sources */,
 				6BE1FC0C2CB4112300FD9A5F /* WineCatalogViewModel.swift in Sources */,
+				6BA95D852CB492DD00429501 /* String.swift in Sources */,
 				6BE1FC2C2CB456F000FD9A5F /* EdgeShadowLayer.swift in Sources */,
 				6BE4DA4A2CB1AB8C003846F4 /* Font.swift in Sources */,
 				6B2766642CB4050200D61331 /* ShadowView.swift in Sources */,
@@ -630,8 +650,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = TabBar;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -658,8 +677,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = TabBar;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -705,14 +723,6 @@
 				minimumVersion = 25.0.1;
 			};
 		};
-		6BE1FC222CB4393A00FD9A5F /* XCRemoteSwiftPackageReference "CountryPickerView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kizitonwose/CountryPickerView.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.3.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -721,21 +731,17 @@
 			package = 6BC339722CB1E96500B1C345 /* XCRemoteSwiftPackageReference "Cosmos" */;
 			productName = Cosmos;
 		};
-		6BE1FC232CB4393A00FD9A5F /* CountryPickerView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6BE1FC222CB4393A00FD9A5F /* XCRemoteSwiftPackageReference "CountryPickerView" */;
-			productName = CountryPickerView;
-		};
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		6BE4DA372CB17DF6003846F4 /* My_Wine.xcdatamodeld */ = {
+		6BA95D8B2CB49CFD00429501 /* My_Wine.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6BE4DA382CB17DF6003846F4 /* My_Wine.xcdatamodel */,
+				6BA95D8C2CB49CFD00429501 /* My_Wine.xcdatamodel */,
 			);
-			currentVersion = 6BE4DA382CB17DF6003846F4 /* My_Wine.xcdatamodel */;
-			path = My_Wine.xcdatamodeld;
+			currentVersion = 6BA95D8C2CB49CFD00429501 /* My_Wine.xcdatamodel */;
+			name = My_Wine.xcdatamodeld;
+			path = /Users/karenkhachatryan/XCodeProjects/Aezakmi/My_Wine/My_Wine/My_Wine/My_Wine.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

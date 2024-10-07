@@ -12,7 +12,8 @@ class WineCatalogViewModel {
     @Published var filteredWine: [WineModel] = []
     @Published var filterWine = Filter()
     var wine: [WineModel] = []
-    
+    var search: String?
+
     private init() {}
     
     func fetchData() {
@@ -20,6 +21,7 @@ class WineCatalogViewModel {
             guard let self = self else { return }
             self.wine = wineModel
             self.filteredWine = wineModel
+            self.filter(by: search)
         }
     }
     
@@ -29,6 +31,9 @@ class WineCatalogViewModel {
             let matchesYear = filterWine.filterYear == nil || wine.year == filterWine.filterYear
             let matchesCountry = filterWine.filterCountry == nil || wine.country?.lowercased() == filterWine.filterCountry?.lowercased()
             return matchesGrape && matchesYear && matchesCountry
+        }
+        if let value = search, !value.isEmpty {
+            filteredWine = filteredWine.filter { ($0.name)?.localizedCaseInsensitiveContains(value) ?? false }
         }
     }
     
@@ -41,31 +46,25 @@ class WineCatalogViewModel {
             filterWine.filterRating = Double(value ?? "")
             filter()
         case .year:
-            filterWine.filterYear = Int(value ?? "")
+            filterWine.filterYear = value
             filter()
         }
     }
     
-//    func filterWinesByRating(rating: Double?) {
-//        filterWine.filterRating = rating
-//        filter()
-//    }
-//
-//    func filterWinesByYear(year: Int?) {
-//        filterWine.filterYear = year
-//        filter()
-//    }
-//
-//    func filterWinesByCountry(country: String?) {
-//        filterWine.filterCountry = country
-//        filter()
-//    }
+    func filter(by value: String?) {
+        self.search = value
+        filter()
+        if let value = value, !value.isEmpty {
+            filteredWine = filteredWine.filter { ($0.name)?.localizedCaseInsensitiveContains(value) ?? false }
+        }
+    }
     
     func resetAllFilter() {
         filterWine.filterRating = nil
         filterWine.filterCountry = nil
         filterWine.filterYear = nil
         self.filteredWine = wine
+        filter(by: search)
     }
     
 }
