@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fi7-h7-VAT">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="TQP-XJ-PA9">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="Fi7-h7-VAT" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oRc-Xa-kzp">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="F7q-fm-6fO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Eb-rS-yk5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-727" y="4"/>
+        </scene>
+        <!--Catalog-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="CatalogViewController" id="Y6W-OH-hqX" customClass="CatalogViewController" customModule="My_Wine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBc-ud-fk7" customClass="ShadowView" customModule="My_Wine" customModuleProvider="target">
+                                <rect key="frame" x="20" y="59" width="353" height="56"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="7JI-wY-h2o">
+                                        <rect key="frame" x="12" y="16" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="5cR-ej-wSP"/>
+                                            <constraint firstAttribute="width" constant="24" id="GGK-Jj-Urq"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a1n-HI-PvS">
+                                        <rect key="frame" x="44" y="0.0" width="301" height="56"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="a1n-HI-PvS" secondAttribute="bottom" id="019-bZ-7Up"/>
+                                    <constraint firstAttribute="trailing" secondItem="a1n-HI-PvS" secondAttribute="trailing" constant="8" id="5Wh-Cu-zOe"/>
+                                    <constraint firstAttribute="height" constant="56" id="NuH-Eg-48i"/>
+                                    <constraint firstItem="a1n-HI-PvS" firstAttribute="leading" secondItem="7JI-wY-h2o" secondAttribute="trailing" constant="8" symbolic="YES" id="VfK-Hr-18U"/>
+                                    <constraint firstItem="7JI-wY-h2o" firstAttribute="centerY" secondItem="FBc-ud-fk7" secondAttribute="centerY" id="d92-aw-Hew"/>
+                                    <constraint firstItem="a1n-HI-PvS" firstAttribute="top" secondItem="FBc-ud-fk7" secondAttribute="top" id="ksr-DL-OA3"/>
+                                    <constraint firstItem="7JI-wY-h2o" firstAttribute="leading" secondItem="FBc-ud-fk7" secondAttribute="leading" constant="12" id="nNd-5c-CP3"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="VOC-zb-DaQ">
+                                <rect key="frame" x="20" y="126" width="353" height="20"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtf-Mv-wON">
+                                        <rect key="frame" x="0.0" y="0.0" width="99" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="QVD-5b-hjU"/>
+                                            <constraint firstAttribute="width" constant="99" id="pWa-He-2Ft"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Harvest year" image="grape">
+                                            <color key="titleColor" red="0.29019607843137252" green="0.26666666666666666" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chooseHarvestYear:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bLZ-dp-ZhR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDk-7e-Inq">
+                                        <rect key="frame" x="148.66666666666666" y="0.0" width="73" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="73" id="G1a-2D-4b6"/>
+                                            <constraint firstAttribute="height" constant="20" id="NX6-fa-q1w"/>
+                                        </constraints>
+                                        <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Country" image="country">
+                                            <color key="titleColor" red="0.29019607843137252" green="0.26666666666666666" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chooseCountry:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="skF-tA-QbQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4l-KZ-qeG">
+                                        <rect key="frame" x="288" y="0.0" width="65" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Zqb-X9-c5y"/>
+                                            <constraint firstAttribute="width" constant="65" id="whp-Bg-ccE"/>
+                                        </constraints>
+                                        <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Rating" image="star">
+                                            <color key="titleColor" red="0.29019607843137252" green="0.26666666666666666" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chooseRating:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Q5x-R3-eI0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="353" id="Isx-2R-NaJ"/>
+                                    <constraint firstAttribute="height" constant="20" id="frD-ew-pfA"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1WW-Kl-00e">
+                                <rect key="frame" x="0.0" y="159" width="393" height="610"/>
+                                <color key="backgroundColor" name="Background"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="1WW-Kl-00e" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0Q1-TR-ylM"/>
+                            <constraint firstItem="VOC-zb-DaQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ASZ-J4-zV5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VOC-zb-DaQ" secondAttribute="trailing" constant="20" id="AYJ-pH-jRk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="1WW-Kl-00e" secondAttribute="bottom" id="LJj-ih-MVt"/>
+                            <constraint firstItem="1WW-Kl-00e" firstAttribute="top" secondItem="VOC-zb-DaQ" secondAttribute="bottom" constant="13" id="SvU-wg-EjU"/>
+                            <constraint firstItem="FBc-ud-fk7" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="aaW-kz-MLc"/>
+                            <constraint firstItem="FBc-ud-fk7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="axe-6w-Bpt"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1WW-Kl-00e" secondAttribute="trailing" id="bYM-Rk-IYD"/>
+                            <constraint firstItem="VOC-zb-DaQ" firstAttribute="top" secondItem="FBc-ud-fk7" secondAttribute="bottom" constant="11" id="nY9-Yh-OAa"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FBc-ud-fk7" secondAttribute="trailing" constant="20" id="zCh-RK-oSI"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Catalog" image="catalog" id="bYq-oQ-Zmp"/>
+                    <navigationItem key="navigationItem" id="1Yj-a9-Ipr"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="a1n-HI-PvS" id="2wd-nB-BBK"/>
+                        <outlet property="wineTableView" destination="1WW-Kl-00e" id="lby-ap-aCI"/>
+                        <outletCollection property="filterButton" destination="vtf-Mv-wON" collectionClass="NSMutableArray" id="5yP-ig-rGj"/>
+                        <outletCollection property="filterButton" destination="jDk-7e-Inq" collectionClass="NSMutableArray" id="xrg-ps-2kn"/>
+                        <outletCollection property="filterButton" destination="V4l-KZ-qeG" collectionClass="NSMutableArray" id="dth-ed-qEd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="catalog" width="24" height="24"/>
+        <image name="country" width="16" height="16"/>
+        <image name="grape" width="14" height="14"/>
+        <image name="search" width="24" height="24"/>
+        <image name="star" width="16" height="16"/>
+        <namedColor name="Background">
+            <color red="0.99599999189376831" green="0.96899998188018799" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

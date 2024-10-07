@@ -4,6 +4,8 @@
         <attribute name="country" optional="YES" attributeType="String"/>
         <attribute name="grape" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isFavortie" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isMyWine" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="photo" optional="YES" attributeType="Binary"/>
         <attribute name="qualities" optional="YES" attributeType="String"/>

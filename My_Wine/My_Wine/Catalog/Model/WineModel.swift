@@ -16,4 +16,6 @@ struct WineModel {
     var year: Int?
     var qualities: String?
     var rating: Double?
+    var isFavorite: Bool?
+    var isMyWine: Bool?
 }

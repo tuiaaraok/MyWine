@@ -11,7 +11,10 @@ class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        showMoreWine.layer.cornerRadius = 20
+//        showMoreWine.layer.borderWidth = 1
+//        showMoreWine.layer.borderColor = UIColor.textBase.cgColor
+//        showMoreWine.titleLabel?.font = .robotoMedium(size: 14)
         // Do any additional setup after loading the view.
     }
     

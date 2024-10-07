@@ -31,6 +31,29 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TfG-ef-FRw">
+                                <rect key="frame" x="16" y="609" width="393" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9V-nc-ZgL">
+                                        <rect key="frame" x="15" y="0.0" width="30" height="40"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <color key="titleColor" name="baseRed"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="Background"/>
+                                <constraints>
+                                    <constraint firstItem="D9V-nc-ZgL" firstAttribute="top" secondItem="TfG-ef-FRw" secondAttribute="top" id="69q-xx-1H4"/>
+                                    <constraint firstAttribute="trailing" secondItem="D9V-nc-ZgL" secondAttribute="trailing" constant="15" id="sED-5W-Ycz"/>
+                                    <constraint firstAttribute="bottom" secondItem="D9V-nc-ZgL" secondAttribute="bottom" id="tFp-Zr-L0Z"/>
+                                    <constraint firstItem="D9V-nc-ZgL" firstAttribute="leading" secondItem="TfG-ef-FRw" secondAttribute="leading" constant="15" id="vU5-X7-D6H"/>
+                                    <constraint firstAttribute="height" constant="40" id="wvR-VH-lJT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="Background"/>
                     </view>
@@ -47,6 +70,9 @@
         <image name="tabBarFavorite" width="24" height="24"/>
         <namedColor name="Background">
             <color red="0.99599999189376831" green="0.96899998188018799" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="baseRed">
+            <color red="0.32899999618530273" green="0.027000000700354576" blue="0.043000001460313797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
