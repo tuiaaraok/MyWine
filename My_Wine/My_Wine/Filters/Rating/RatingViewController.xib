@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RatingViewController" customModule="My_Wine" customModuleProvider="target">
+            <connections>
+                <outlet property="clearFilterButton" destination="6Sf-sY-G9q" id="TGS-Lu-7KI"/>
+                <outlet property="ratingView" destination="bf5-V2-M05" id="WWx-2X-149"/>
+                <outlet property="resetAllButton" destination="uyR-DY-tnK" id="juS-rh-4Jq"/>
+                <outlet property="titleLabel" destination="AQ8-MC-y9e" id="RbX-Vg-zDp"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiH-WR-qrY">
+                    <rect key="frame" x="338" y="20" width="37" height="37"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="close"/>
+                    <connections>
+                        <action selector="clickedCloseButton:" destination="-1" eventType="touchUpInside" id="PoK-bh-Wu6"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQ8-MC-y9e">
+                    <rect key="frame" x="29" y="42" width="159.33333333333334" height="28"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="2jE-nl-03T">
+                    <rect key="frame" x="181" y="787" width="198" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyR-DY-tnK">
+                            <rect key="frame" x="0.0" y="0.0" width="87" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="fvo-Yq-xTT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Reset All">
+                                <color key="titleColor" name="textBase"/>
+                            </state>
+                            <connections>
+                                <action selector="clickedResetAllFilters:" destination="-1" eventType="touchUpInside" id="rIh-pE-8OG"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Sf-sY-G9q">
+                            <rect key="frame" x="111" y="0.0" width="87" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="8te-Wy-Fce"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Clear Filter">
+                                <color key="titleColor" name="textBase"/>
+                            </state>
+                            <connections>
+                                <action selector="clickedClearFilter:" destination="-1" eventType="touchUpInside" id="c6O-3F-FVe"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bf5-V2-M05" customClass="CosmosView" customModule="Cosmos">
+                    <rect key="frame" x="16" y="362" width="361" height="128"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="128" id="H7X-gf-ACj"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="starFill"/>
+                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="star"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="JiH-WR-qrY" secondAttribute="trailing" constant="18" id="2q9-fh-PTe"/>
+                <constraint firstItem="bf5-V2-M05" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="2sF-mk-PXd"/>
+                <constraint firstItem="AQ8-MC-y9e" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="29" id="3l0-e4-1ti"/>
+                <constraint firstItem="AQ8-MC-y9e" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="42" id="GRT-sP-ekY"/>
+                <constraint firstItem="bf5-V2-M05" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Hrv-OM-UBK"/>
+                <constraint firstAttribute="trailing" secondItem="bf5-V2-M05" secondAttribute="trailing" constant="16" id="M9U-5R-n5D"/>
+                <constraint firstItem="bf5-V2-M05" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QV4-MN-ylM"/>
+                <constraint firstAttribute="trailing" secondItem="2jE-nl-03T" secondAttribute="trailing" constant="14" id="cha-89-Mwo"/>
+                <constraint firstItem="JiH-WR-qrY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="gHb-Sz-eII"/>
+                <constraint firstAttribute="bottom" secondItem="2jE-nl-03T" secondAttribute="bottom" constant="35" id="zvk-ss-MPL"/>
+            </constraints>
+            <point key="canvasLocation" x="122.90076335877862" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close" width="37" height="37"/>
+        <image name="star" width="17" height="16"/>
+        <image name="starFill" width="20" height="20"/>
+        <namedColor name="textBase">
+            <color red="0.28600001335144043" green="0.27099999785423279" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

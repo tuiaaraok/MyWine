@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class CatalogViewController: UIViewController {
 
@@ -13,10 +14,12 @@ class CatalogViewController: UIViewController {
     @IBOutlet var filterButton: [UIButton]!
     @IBOutlet weak var wineTableView: UITableView!
     private let viewModel = WineCatalogViewModel.shared
+    private var cancellables: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        subscribe()
     }
     
     func setupUI() {
@@ -32,6 +35,26 @@ class CatalogViewController: UIViewController {
         wineTableView.register(UINib(nibName: "WineTableViewCell", bundle: nil), forCellReuseIdentifier: "WineTableViewCell")
     }
     
+    func subscribe() {
+        viewModel.$filteredWine
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] material in
+                guard let self = self else { return }
+                self.wineTableView.reloadData()
+            }
+            .store(in: &cancellables)
+        
+        viewModel.$filterWine
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] filter in
+                guard let self = self else { return }
+                self.filterButton[0].isSelected = filter.filterYear != nil
+                self.filterButton[1].isSelected = filter.filterCountry != nil
+                self.filterButton[2].isSelected = filter.filterRating != nil
+            }
+            .store(in: &cancellables)
+    }
+    
     @objc func clickedAddWine() {
         let wineFormVC = WineFormViewController(nibName: "WineFormViewController", bundle: nil)
         wineFormVC.modalPresentationStyle = .overFullScreen
@@ -39,10 +62,32 @@ class CatalogViewController: UIViewController {
     }
 
     @IBAction func chooseHarvestYear(_ sender: UIButton) {
+        let filterVC = FilterViewController(nibName: "FilterViewController", bundle: nil)
+        filterVC.modalPresentationStyle = .custom
+        filterVC.transitioningDelegate = self
+        filterVC.delegate = self
+        filterVC.filterType = .year
+        filterVC.selectedFilter = String(viewModel.filterWine.filterYear ?? 0)
+        present(filterVC, animated: true, completion: nil)
     }
+    
     @IBAction func chooseCountry(_ sender: UIButton) {
+        let filterVC = FilterViewController(nibName: "FilterViewController", bundle: nil)
+        filterVC.modalPresentationStyle = .custom
+        filterVC.transitioningDelegate = self
+        filterVC.delegate = self
+        filterVC.filterType = .country
+        filterVC.selectedFilter = viewModel.filterWine.filterCountry
+        present(filterVC, animated: true, completion: nil)
     }
+    
     @IBAction func chooseRating(_ sender: UIButton) {
+        let ratingVC = RatingViewController(nibName: "RatingViewController", bundle: nil)
+        ratingVC.modalPresentationStyle = .custom
+        ratingVC.transitioningDelegate = self
+        ratingVC.delegate = self
+        ratingVC.selectedRating = viewModel.filterWine.filterRating
+        present(ratingVC, animated: true, completion: nil)
     }
 }
 
@@ -78,5 +123,44 @@ extension CatalogViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
+    }
+}
+
+extension CatalogViewController: FilterViewControllerDelegate {
+    func clearFilter(filterType: FilterType) {
+        viewModel.filterByType(filterType: filterType, value: nil)
+    }
+    
+    func resetAllFilter() {
+        viewModel.resetAllFilter()
+    }
+    
+    func selectFilter(filterType: FilterType, value: String?) {
+        viewModel.filterByType(filterType: filterType, value: value)
+    }
+}
+
+extension CatalogViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return HalfScreenPresentationController(presentedViewController: presented, presenting: presenting)
+    }
+}
+
+class HalfScreenPresentationController: UIPresentationController {
+    
+    override var frameOfPresentedViewInContainerView: CGRect {
+        guard let containerView = containerView else {
+            return .zero
+        }
+        let height = containerView.bounds.height / 2
+        return CGRect(x: 0, y: containerView.bounds.height - height, width: containerView.bounds.width, height: height)
+    }
+    
+    override func presentationTransitionWillBegin() {
+        guard let containerView = containerView else { return }
+        containerView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+    }
+    
+    override func dismissalTransitionWillBegin() {
     }
 }

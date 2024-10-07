@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterViewController" customModule="My_Wine" customModuleProvider="target">
+            <connections>
+                <outlet property="clearFilterButton" destination="GVz-am-X8Z" id="zrs-FW-Bdw"/>
+                <outlet property="countriesTableView" destination="Yb8-aX-kXG" id="ufa-ZA-NMq"/>
+                <outlet property="resetAllButton" destination="3ZW-3J-Rrr" id="nPx-N2-vae"/>
+                <outlet property="titleLabel" destination="s2D-OM-aKI" id="Ehr-P1-KCp"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y59-Zj-Bw7">
+                    <rect key="frame" x="338" y="20" width="37" height="37"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="close"/>
+                    <connections>
+                        <action selector="clickedCloseButton:" destination="-1" eventType="touchUpInside" id="gfo-VT-2G9"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Region" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2D-OM-aKI">
+                    <rect key="frame" x="29" y="42" width="165.66666666666666" height="28"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yb8-aX-kXG">
+                    <rect key="frame" x="0.0" y="96" width="393" height="671"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="SXa-yi-7RJ">
+                    <rect key="frame" x="181" y="787" width="198" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ZW-3J-Rrr">
+                            <rect key="frame" x="0.0" y="0.0" width="87" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="xt1-oi-0bm"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Reset All">
+                                <color key="titleColor" name="textBase"/>
+                            </state>
+                            <connections>
+                                <action selector="clickedResetAllFilters:" destination="-1" eventType="touchUpInside" id="fLO-Dh-MnZ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVz-am-X8Z">
+                            <rect key="frame" x="111" y="0.0" width="87" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="Gna-TG-tTl"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Clear Filter">
+                                <color key="titleColor" name="textBase"/>
+                            </state>
+                            <connections>
+                                <action selector="clickedClearFilter:" destination="-1" eventType="touchUpInside" id="R7p-1f-Ark"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Y59-Zj-Bw7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="B9D-FD-XjS"/>
+                <constraint firstAttribute="trailing" secondItem="SXa-yi-7RJ" secondAttribute="trailing" constant="14" id="Bf9-Hh-hRc"/>
+                <constraint firstItem="SXa-yi-7RJ" firstAttribute="top" secondItem="Yb8-aX-kXG" secondAttribute="bottom" constant="20" id="IhY-5U-XHh"/>
+                <constraint firstItem="Yb8-aX-kXG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Kh5-Q7-ZoY"/>
+                <constraint firstAttribute="trailing" secondItem="Y59-Zj-Bw7" secondAttribute="trailing" constant="18" id="OXY-vg-FVs"/>
+                <constraint firstAttribute="bottom" secondItem="SXa-yi-7RJ" secondAttribute="bottom" constant="35" id="Qd6-cS-Zr8"/>
+                <constraint firstItem="s2D-OM-aKI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="29" id="duh-x9-sg6"/>
+                <constraint firstAttribute="trailing" secondItem="Yb8-aX-kXG" secondAttribute="trailing" id="dxl-zh-YD6"/>
+                <constraint firstItem="Yb8-aX-kXG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="96" id="jKu-9h-cj4"/>
+                <constraint firstItem="s2D-OM-aKI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="42" id="jsQ-So-dX5"/>
+            </constraints>
+            <point key="canvasLocation" x="122.90076335877862" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close" width="37" height="37"/>
+        <namedColor name="textBase">
+            <color red="0.28600001335144043" green="0.27099999785423279" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
