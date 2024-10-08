@@ -62,13 +62,6 @@ class WineTableViewCell: UITableViewCell {
         WineCatalogViewModel.shared.updateMyWineStatus(id: id, isMyWine: sender.isSelected) { [weak self] error in
             guard let self = self else { return }
             self.delegate?.showError(error: error)
-
-//            if let error = error {
-//                sender.isSelected = !sender.isSelected
-//                self?.delegate?.showError(error: error)
-//            } else {
-//                WineCatalogViewModel.shared.fetchData()
-//            }
         }
     }
     
@@ -78,12 +71,6 @@ class WineTableViewCell: UITableViewCell {
         WineCatalogViewModel.shared.updateFavoritesStatus(id: id, isFavorite: sender.isSelected) { [weak self] error in
             guard let self = self else { return }
             self.delegate?.showError(error: error)
-//            if let error = error {
-//                sender.isSelected = !sender.isSelected
-//                self?.delegate?.showError(error: error)
-//            } else {
-//                WineCatalogViewModel.shared.fetchData()
-//            }
         }
     }
 }

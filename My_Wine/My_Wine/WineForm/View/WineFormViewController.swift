@@ -54,6 +54,7 @@ class WineFormViewController: UIViewController {
         photoButton.layer.borderColor = #colorLiteral(red: 0.6571641564, green: 0.6571640372, blue: 0.6571640372, alpha: 1).cgColor
         photoButton.layer.cornerRadius = 3
         photoButton.layer.masksToBounds = true
+        photoButton.imageView?.contentMode = .scaleAspectFit
         formView.addShadow()
     }
     
@@ -63,6 +64,15 @@ class WineFormViewController: UIViewController {
             .sink { [weak self] wineModel in
                 guard let self = self else { return }
                 if self.viewModel.isEditing {
+                    self.countryTextField.text = wineModel.country
+                    self.grapeTextField.text = wineModel.grape
+                    self.nameTextField.text = wineModel.name
+                    self.tasteQualitiesTextView.text = wineModel.qualities
+                    self.yearTextField.text = wineModel.year
+                    self.ratingView.rating = wineModel.rating
+                    if let data = wineModel.photo {
+                        self.photoButton.setImage(UIImage(data: data), for: .normal)
+                    }
                 }
                 self.saveButton.isEnabled = ((wineModel.country ?? "").checkValidationo() && (wineModel.grape ?? "").checkValidationo() && (wineModel.name ?? "").checkValidationo() && (wineModel.qualities ?? "").checkValidationo() && (wineModel.year ?? "").checkValidationo() && wineModel.photo != nil)
 

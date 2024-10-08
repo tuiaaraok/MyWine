@@ -136,6 +136,19 @@ extension CatalogViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let wineFormVC = WineFormViewController(nibName: "WineFormViewController", bundle: nil)
+        WineFormViewModel.shared.isEditing = true
+        WineFormViewModel.shared.wineModel = self.viewModel.filteredWine[indexPath.row]
+        wineFormVC.modalPresentationStyle = .overFullScreen
+        wineFormVC.completion = { [weak self] in
+            if let self = self {
+                self.viewModel.fetchData()
+            }
+        }
+        self.present(wineFormVC, animated: true)
+    }
 }
 
 extension CatalogViewController: FilterViewControllerDelegate {
