@@ -8,22 +8,19 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    @IBOutlet var settingButtons: [UIButton]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        settingButtons.forEach({ $0.addShadow() })
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func clickedContactUs(_ sender: UIButton) {
     }
-    */
-
+    
+    @IBAction func clickedPrivacyPolicy(_ sender: UIButton) {
+    }
+    
+    @IBAction func clickedRateUs(_ sender: UIButton) {
+    }
 }
