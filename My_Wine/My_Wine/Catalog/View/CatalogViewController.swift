@@ -21,6 +21,9 @@ class CatalogViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         subscribe()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         viewModel.fetchData()
     }
     

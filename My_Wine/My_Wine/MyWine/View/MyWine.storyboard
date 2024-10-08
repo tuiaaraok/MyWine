@@ -5,15 +5,15 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="oNl-Sj-TQN">
             <objects>
-                <navigationController id="TKD-Gl-8rY" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="TKD-Gl-8rY" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PsF-TO-u32">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -31,22 +31,193 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M25-xN-4EM" customClass="ShadowView" customModule="My_Wine" customModuleProvider="target">
+                                <rect key="frame" x="20" y="59" width="354" height="56"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="a71-jg-33z">
+                                        <rect key="frame" x="12" y="16" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="Sph-UP-W5z"/>
+                                            <constraint firstAttribute="height" constant="24" id="nMT-bh-bop"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rMs-AU-QLW">
+                                        <rect key="frame" x="44" y="0.0" width="302" height="56"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="rMs-AU-QLW" firstAttribute="top" secondItem="M25-xN-4EM" secondAttribute="top" id="ZcX-xo-iJx"/>
+                                    <constraint firstItem="rMs-AU-QLW" firstAttribute="leading" secondItem="a71-jg-33z" secondAttribute="trailing" constant="8" symbolic="YES" id="e0t-sn-rRg"/>
+                                    <constraint firstItem="a71-jg-33z" firstAttribute="leading" secondItem="M25-xN-4EM" secondAttribute="leading" constant="12" id="iRh-Nf-vSE"/>
+                                    <constraint firstAttribute="height" constant="56" id="iez-5b-KWI"/>
+                                    <constraint firstAttribute="trailing" secondItem="rMs-AU-QLW" secondAttribute="trailing" constant="8" id="rpJ-Cb-2vW"/>
+                                    <constraint firstAttribute="bottom" secondItem="rMs-AU-QLW" secondAttribute="bottom" id="uLW-h6-hDz"/>
+                                    <constraint firstItem="a71-jg-33z" firstAttribute="centerY" secondItem="M25-xN-4EM" secondAttribute="centerY" id="uRO-HN-78d"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="ggg-CN-AMh">
+                                <rect key="frame" x="20" y="126" width="353" height="20"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBU-Ki-buh" customClass="FilterButton" customModule="My_Wine" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="99" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="6ED-Oj-eG2"/>
+                                            <constraint firstAttribute="width" constant="99" id="e6z-Zb-rJN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Harvest year" image="grape">
+                                            <color key="titleColor" red="0.2901960784" green="0.2666666667" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="selectedYearFilter">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chooseHarvestYear:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bp8-6h-m9i"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BD-ar-ZcH" customClass="FilterButton" customModule="My_Wine" customModuleProvider="target">
+                                        <rect key="frame" x="148.66666666666666" y="0.0" width="73" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="73" id="MvM-5R-qzf"/>
+                                            <constraint firstAttribute="height" constant="20" id="jYV-zj-6ah"/>
+                                        </constraints>
+                                        <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Country" image="country">
+                                            <color key="titleColor" red="0.2901960784" green="0.2666666667" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="selectedCountryFilter">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chooseCountry:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7Uw-df-2nO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2I-vr-e7S" customClass="FilterButton" customModule="My_Wine" customModuleProvider="target">
+                                        <rect key="frame" x="288" y="0.0" width="65" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="65" id="6kr-Hf-UYn"/>
+                                            <constraint firstAttribute="height" constant="20" id="ADq-xn-25f"/>
+                                        </constraints>
+                                        <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Rating" image="star">
+                                            <color key="titleColor" red="0.2901960784" green="0.2666666667" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="selectedRatingFilter">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chooseRating:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="A0w-px-phY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="EUI-5C-pFS"/>
+                                    <constraint firstAttribute="width" constant="353" id="XOe-2g-7AC"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OPy-Vn-bvE">
+                                <rect key="frame" x="0.0" y="159" width="393" height="554"/>
+                                <color key="backgroundColor" name="Background"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TWu-Lc-hCe">
+                                <rect key="frame" x="0.0" y="721" width="393" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAj-Nm-PAh">
+                                        <rect key="frame" x="15" y="0.0" width="363" height="40"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <color key="titleColor" name="baseRed"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickedShowMoreWine:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QWk-TF-KoZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="Background"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="MqU-WC-OOL"/>
+                                    <constraint firstAttribute="trailing" secondItem="qAj-Nm-PAh" secondAttribute="trailing" constant="15" id="RNN-xQ-ikW"/>
+                                    <constraint firstItem="qAj-Nm-PAh" firstAttribute="leading" secondItem="TWu-Lc-hCe" secondAttribute="leading" constant="15" id="eWU-pm-sED"/>
+                                    <constraint firstAttribute="bottom" secondItem="qAj-Nm-PAh" secondAttribute="bottom" id="g9U-So-uWX"/>
+                                    <constraint firstItem="qAj-Nm-PAh" firstAttribute="top" secondItem="TWu-Lc-hCe" secondAttribute="top" id="xnV-nx-jbs"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="TWu-Lc-hCe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="CMe-L1-dAK"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="TWu-Lc-hCe" secondAttribute="bottom" constant="8" id="Dxq-vk-rYK"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="OPy-Vn-bvE" secondAttribute="trailing" id="Fym-d4-bck"/>
+                            <constraint firstItem="M25-xN-4EM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="GL5-fX-7SY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="M25-xN-4EM" secondAttribute="trailing" constant="19" id="Jix-F2-B9v"/>
+                            <constraint firstItem="TWu-Lc-hCe" firstAttribute="top" secondItem="OPy-Vn-bvE" secondAttribute="bottom" constant="8" symbolic="YES" id="MwG-Q2-gDO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="OPy-Vn-bvE" secondAttribute="bottom" id="RvI-RH-3FN"/>
+                            <constraint firstItem="ggg-CN-AMh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="cJT-E6-55D"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="TWu-Lc-hCe" secondAttribute="trailing" id="eb2-ux-fXX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ggg-CN-AMh" secondAttribute="trailing" constant="20" id="hGp-8Z-Vn4"/>
+                            <constraint firstItem="ggg-CN-AMh" firstAttribute="top" secondItem="M25-xN-4EM" secondAttribute="bottom" constant="11" id="hdA-Q0-nh4"/>
+                            <constraint firstItem="OPy-Vn-bvE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="mni-Ie-GgV"/>
+                            <constraint firstItem="OPy-Vn-bvE" firstAttribute="top" secondItem="ggg-CN-AMh" secondAttribute="bottom" constant="13" id="rP6-5t-B2R"/>
+                            <constraint firstItem="M25-xN-4EM" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="t1l-C9-gYT"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RvI-RH-3FN"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="My wine" image="tabBarMy" id="itN-91-ZYh"/>
                     <navigationItem key="navigationItem" id="4Ur-yu-GFF"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="moreViewConst" destination="MwG-Q2-gDO" id="lwt-tY-Pa5"/>
+                        <outlet property="moreWineView" destination="TWu-Lc-hCe" id="o0K-1U-cbJ"/>
+                        <outlet property="searchTextField" destination="rMs-AU-QLW" id="OEr-SM-4L9"/>
+                        <outlet property="showMoreButton" destination="qAj-Nm-PAh" id="kQd-Ro-11s"/>
+                        <outlet property="tableViewConst" destination="RvI-RH-3FN" id="3az-FH-OUG"/>
+                        <outlet property="wineTableView" destination="OPy-Vn-bvE" id="vjT-j8-aSH"/>
+                        <outletCollection property="filterButton" destination="uBU-Ki-buh" collectionClass="NSMutableArray" id="19t-tU-0Br"/>
+                        <outletCollection property="filterButton" destination="3BD-ar-ZcH" collectionClass="NSMutableArray" id="wZJ-Xx-0rI"/>
+                        <outletCollection property="filterButton" destination="X2I-vr-e7S" collectionClass="NSMutableArray" id="wix-ow-HzV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102" y="4"/>
+            <point key="canvasLocation" x="101.5267175572519" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
+        <image name="country" width="16" height="16"/>
+        <image name="grape" width="14" height="14"/>
+        <image name="search" width="24" height="24"/>
+        <image name="selectedCountryFilter" width="14" height="14"/>
+        <image name="selectedRatingFilter" width="13.666666984558105" height="12.666666984558105"/>
+        <image name="selectedYearFilter" width="14" height="14"/>
+        <image name="star" width="17" height="16"/>
         <image name="tabBarMy" width="24" height="24"/>
         <namedColor name="Background">
-            <color red="0.99607843137254903" green="0.96862745098039216" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.99599999189376831" green="0.96899998188018799" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="baseRed">
+            <color red="0.32899999618530273" green="0.027000000700354576" blue="0.043000001460313797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

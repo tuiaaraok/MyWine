@@ -5,15 +5,15 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="u7x-aE-Fhl">
             <objects>
-                <navigationController id="N7V-3y-ixp" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="N7V-3y-ixp" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qQA-M6-qp9">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -32,34 +32,169 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TfG-ef-FRw">
-                                <rect key="frame" x="16" y="609" width="393" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgg-tW-93r" customClass="ShadowView" customModule="My_Wine" customModuleProvider="target">
+                                <rect key="frame" x="20" y="59" width="353" height="56"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9V-nc-ZgL">
-                                        <rect key="frame" x="15" y="0.0" width="30" height="40"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="YVV-CZ-28S">
+                                        <rect key="frame" x="12" y="16" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="9nW-LH-aoZ"/>
+                                            <constraint firstAttribute="width" constant="24" id="LQE-bB-pP0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1z1-ML-BqW">
+                                        <rect key="frame" x="44" y="0.0" width="301" height="56"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="YVV-CZ-28S" firstAttribute="centerY" secondItem="pgg-tW-93r" secondAttribute="centerY" id="6dF-B5-vCw"/>
+                                    <constraint firstAttribute="height" constant="56" id="AcO-Bt-sYa"/>
+                                    <constraint firstAttribute="bottom" secondItem="1z1-ML-BqW" secondAttribute="bottom" id="FWt-Xm-BQU"/>
+                                    <constraint firstItem="YVV-CZ-28S" firstAttribute="leading" secondItem="pgg-tW-93r" secondAttribute="leading" constant="12" id="hAh-Zx-QEW"/>
+                                    <constraint firstItem="1z1-ML-BqW" firstAttribute="leading" secondItem="YVV-CZ-28S" secondAttribute="trailing" constant="8" symbolic="YES" id="klj-eM-2Gn"/>
+                                    <constraint firstItem="1z1-ML-BqW" firstAttribute="top" secondItem="pgg-tW-93r" secondAttribute="top" id="o4C-Y6-lDk"/>
+                                    <constraint firstAttribute="trailing" secondItem="1z1-ML-BqW" secondAttribute="trailing" constant="8" id="z8b-yF-dZc"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="Hqa-mW-Bdo">
+                                <rect key="frame" x="20" y="126" width="353" height="20"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="raN-8s-YL8" customClass="FilterButton" customModule="My_Wine" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="99" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="MS6-yT-PCO"/>
+                                            <constraint firstAttribute="width" constant="99" id="zsQ-u3-aog"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Harvest year" image="grape">
+                                            <color key="titleColor" red="0.2901960784" green="0.2666666667" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="selectedYearFilter">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chooseHarvestYear:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="C7d-K4-9xS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIL-eZ-9Mc" customClass="FilterButton" customModule="My_Wine" customModuleProvider="target">
+                                        <rect key="frame" x="148.66666666666666" y="0.0" width="73" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="txK-3F-aAa"/>
+                                            <constraint firstAttribute="width" constant="73" id="zRb-NQ-DDR"/>
+                                        </constraints>
+                                        <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Country" image="country">
+                                            <color key="titleColor" red="0.2901960784" green="0.2666666667" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="selectedCountryFilter">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chooseCountry:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aGd-Sg-AJ0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjt-6h-Eky" customClass="FilterButton" customModule="My_Wine" customModuleProvider="target">
+                                        <rect key="frame" x="288" y="0.0" width="65" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="L0L-17-RzZ"/>
+                                            <constraint firstAttribute="width" constant="65" id="Vde-bS-Dja"/>
+                                        </constraints>
+                                        <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Rating" image="star">
+                                            <color key="titleColor" red="0.2901960784" green="0.2666666667" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="selected" image="selectedRatingFilter">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="chooseRating:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7sB-Zu-Eme"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="HnT-3y-SK5"/>
+                                    <constraint firstAttribute="width" constant="353" id="KmW-sb-nIG"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ueA-Ac-MpI">
+                                <rect key="frame" x="0.0" y="159" width="393" height="554"/>
+                                <color key="backgroundColor" name="Background"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKu-3u-JP4">
+                                <rect key="frame" x="0.0" y="721" width="393" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vM2-Qn-mxV">
+                                        <rect key="frame" x="15" y="0.0" width="363" height="40"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal">
                                             <color key="titleColor" name="baseRed"/>
                                         </state>
+                                        <connections>
+                                            <action selector="clickedShowMoreWine:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5OQ-pg-uck"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="Background"/>
                                 <constraints>
-                                    <constraint firstItem="D9V-nc-ZgL" firstAttribute="top" secondItem="TfG-ef-FRw" secondAttribute="top" id="69q-xx-1H4"/>
-                                    <constraint firstAttribute="trailing" secondItem="D9V-nc-ZgL" secondAttribute="trailing" constant="15" id="sED-5W-Ycz"/>
-                                    <constraint firstAttribute="bottom" secondItem="D9V-nc-ZgL" secondAttribute="bottom" id="tFp-Zr-L0Z"/>
-                                    <constraint firstItem="D9V-nc-ZgL" firstAttribute="leading" secondItem="TfG-ef-FRw" secondAttribute="leading" constant="15" id="vU5-X7-D6H"/>
-                                    <constraint firstAttribute="height" constant="40" id="wvR-VH-lJT"/>
+                                    <constraint firstAttribute="height" constant="40" id="3Np-rr-J2U"/>
+                                    <constraint firstItem="vM2-Qn-mxV" firstAttribute="leading" secondItem="VKu-3u-JP4" secondAttribute="leading" constant="15" id="4F0-eY-Ad1"/>
+                                    <constraint firstAttribute="bottom" secondItem="vM2-Qn-mxV" secondAttribute="bottom" id="Jnm-Nu-OPn"/>
+                                    <constraint firstItem="vM2-Qn-mxV" firstAttribute="top" secondItem="VKu-3u-JP4" secondAttribute="top" id="aUb-5C-DnW"/>
+                                    <constraint firstAttribute="trailing" secondItem="vM2-Qn-mxV" secondAttribute="trailing" constant="15" id="pAl-1t-tL3"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="ueA-Ac-MpI" firstAttribute="top" secondItem="Hqa-mW-Bdo" secondAttribute="bottom" constant="13" id="5Yi-mC-NSX"/>
+                            <constraint firstItem="Hqa-mW-Bdo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="79l-Ck-gln"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pgg-tW-93r" secondAttribute="trailing" constant="20" id="9jF-kh-GOZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ueA-Ac-MpI" secondAttribute="trailing" id="CKh-wF-s0O"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="VKu-3u-JP4" secondAttribute="bottom" constant="8" id="IHg-j2-qK9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ueA-Ac-MpI" secondAttribute="bottom" id="JtI-i6-YCB"/>
+                            <constraint firstItem="pgg-tW-93r" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="LJs-Ad-nKh"/>
+                            <constraint firstItem="VKu-3u-JP4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Rnc-uo-Wqo"/>
+                            <constraint firstItem="VKu-3u-JP4" firstAttribute="top" secondItem="ueA-Ac-MpI" secondAttribute="bottom" constant="8" symbolic="YES" id="lxS-Jr-tEF"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Hqa-mW-Bdo" secondAttribute="trailing" constant="20" id="sSd-eO-lWH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VKu-3u-JP4" secondAttribute="trailing" id="tT4-VV-DoD"/>
+                            <constraint firstItem="ueA-Ac-MpI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ty5-GI-SEB"/>
+                            <constraint firstItem="Hqa-mW-Bdo" firstAttribute="top" secondItem="pgg-tW-93r" secondAttribute="bottom" constant="11" id="wqY-d3-f1F"/>
+                            <constraint firstItem="pgg-tW-93r" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="zbJ-ne-IGv"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="JtI-i6-YCB"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorites" image="tabBarFavorite" id="fEf-bk-6rV"/>
                     <navigationItem key="navigationItem" id="1ub-Hy-aEz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="moreViewConst" destination="lxS-Jr-tEF" id="cke-4f-lYZ"/>
+                        <outlet property="moreWineView" destination="VKu-3u-JP4" id="kWc-uz-z9b"/>
+                        <outlet property="searchTextField" destination="1z1-ML-BqW" id="0NS-TY-bfd"/>
+                        <outlet property="showMoreButton" destination="vM2-Qn-mxV" id="jbn-a2-cnv"/>
+                        <outlet property="tableViewConst" destination="JtI-i6-YCB" id="Hmx-VG-3Y2"/>
+                        <outlet property="wineTableView" destination="ueA-Ac-MpI" id="0ku-hl-4h4"/>
+                        <outletCollection property="filterButton" destination="raN-8s-YL8" collectionClass="NSMutableArray" id="R3r-L3-Dem"/>
+                        <outletCollection property="filterButton" destination="GIL-eZ-9Mc" collectionClass="NSMutableArray" id="iuL-xA-Qaa"/>
+                        <outletCollection property="filterButton" destination="Kjt-6h-Eky" collectionClass="NSMutableArray" id="xtR-GB-xUs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,6 +202,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="country" width="16" height="16"/>
+        <image name="grape" width="14" height="14"/>
+        <image name="search" width="24" height="24"/>
+        <image name="selectedCountryFilter" width="14" height="14"/>
+        <image name="selectedRatingFilter" width="13.666666984558105" height="12.666666984558105"/>
+        <image name="selectedYearFilter" width="14" height="14"/>
+        <image name="star" width="17" height="16"/>
         <image name="tabBarFavorite" width="24" height="24"/>
         <namedColor name="Background">
             <color red="0.99599999189376831" green="0.96899998188018799" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -74,5 +216,8 @@
         <namedColor name="baseRed">
             <color red="0.32899999618530273" green="0.027000000700354576" blue="0.043000001460313797" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

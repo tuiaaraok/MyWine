@@ -44,6 +44,70 @@ class CoreDataManager {
         }
     }
     
+    func fetchFavoriteWine(completion: @escaping ([WineModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Wine> = Wine.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "isFavorite == %@", NSNumber(value: true))
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                var wineModels: [WineModel] = []
+                for result in results {
+                    let wineModel = WineModel(id: result.id ?? UUID(),
+                                              name: result.name,
+                                              photo: result.photo,
+                                              grape: result.grape,
+                                              country: result.country,
+                                              year: result.year,
+                                              qualities: result.qualities,
+                                              rating: result.rating,
+                                              isFavorite: result.isFavorite,
+                                              isMyWine: result.isMyWine)
+                    wineModels.append(wineModel)
+                }
+                DispatchQueue.main.async {
+                    completion(wineModels, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([], error)
+                }
+            }
+        }
+    }
+    
+    func fetchMyWine(completion: @escaping ([WineModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Wine> = Wine.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "isMyWine == %@", NSNumber(value: true))
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                var wineModels: [WineModel] = []
+                for result in results {
+                    let wineModel = WineModel(id: result.id ?? UUID(),
+                                              name: result.name,
+                                              photo: result.photo,
+                                              grape: result.grape,
+                                              country: result.country,
+                                              year: result.year,
+                                              qualities: result.qualities,
+                                              rating: result.rating,
+                                              isFavorite: result.isFavorite,
+                                              isMyWine: result.isMyWine)
+                    wineModels.append(wineModel)
+                }
+                DispatchQueue.main.async {
+                    completion(wineModels, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([], error)
+                }
+            }
+        }
+    }
+    
     func saveWine(wineModel: WineModel, completion: @escaping (Error?) -> Void) {
         let backgroundContext = persistentContainer.newBackgroundContext()
         backgroundContext.perform {
