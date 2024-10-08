@@ -126,6 +126,7 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WineTableViewCell", for: indexPath) as! WineTableViewCell
         cell.setupContent(wine: viewModel.filteredWine[indexPath.row])
+        cell.delegate = self
         return cell
     }
     
@@ -164,3 +165,12 @@ extension FavoritesViewController: UITextFieldDelegate {
     }
 }
 
+extension FavoritesViewController: WineTableViewDelegate {
+    func showError(error: (any Error)?) {
+        if let error = error {
+            self.showErrorAlert(message: error.localizedDescription)
+        } else {
+            viewModel.fetchData()
+        }
+    }
+}

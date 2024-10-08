@@ -25,6 +25,18 @@ class WineCatalogViewModel {
         }
     }
     
+    func updateMyWineStatus(id: UUID, isMyWine: Bool, completion: @escaping (Error?) -> Void) {
+        CoreDataManager.shared.updateMyWineStatus(wineID: id, isMyWine: isMyWine) { error in
+            completion(error)
+        }
+    }
+    
+    func updateFavoritesStatus(id: UUID, isFavorite: Bool, completion: @escaping (Error?) -> Void) {
+        CoreDataManager.shared.updateWineFavoriteStatus(wineID: id, isFavorite: isFavorite) { error in
+            completion(error)
+        }
+    }
+    
     func filter() {
         filteredWine = wine.filter { wine in
             let matchesGrape = filterWine.filterRating == nil || wine.rating == filterWine.filterRating

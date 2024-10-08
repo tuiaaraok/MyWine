@@ -8,6 +8,10 @@
 import UIKit
 import Cosmos
 
+protocol WineTableViewDelegate: AnyObject {
+    func showError(error: Error?)
+}
+
 class WineTableViewCell: UITableViewCell {
 
     @IBOutlet weak var wineImageView: UIImageView!
@@ -17,6 +21,8 @@ class WineTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var myWineButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
+    weak var delegate: WineTableViewDelegate?
+    var id: UUID?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,10 +35,10 @@ class WineTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
     }
     
     func setupContent(wine: WineModel) {
+        self.id = wine.id
         if let data = wine.photo {
             wineImageView.image = UIImage(data: data)
         } else {
@@ -46,8 +52,38 @@ class WineTableViewCell: UITableViewCell {
         ratingView.rating = wine.rating
     }
     
-    @IBAction func clickedMyWine(_ sender: UIButton) {
+    override func prepareForReuse() {
+        id = nil
     }
+    
+    @IBAction func clickedMyWine(_ sender: UIButton) {
+        guard let id = id else { return }
+        sender.isSelected = !sender.isSelected
+        WineCatalogViewModel.shared.updateMyWineStatus(id: id, isMyWine: sender.isSelected) { [weak self] error in
+            guard let self = self else { return }
+            self.delegate?.showError(error: error)
+
+//            if let error = error {
+//                sender.isSelected = !sender.isSelected
+//                self?.delegate?.showError(error: error)
+//            } else {
+//                WineCatalogViewModel.shared.fetchData()
+//            }
+        }
+    }
+    
     @IBAction func clickedFavorite(_ sender: UIButton) {
+        guard let id = id else { return }
+        sender.isSelected = !sender.isSelected
+        WineCatalogViewModel.shared.updateFavoritesStatus(id: id, isFavorite: sender.isSelected) { [weak self] error in
+            guard let self = self else { return }
+            self.delegate?.showError(error: error)
+//            if let error = error {
+//                sender.isSelected = !sender.isSelected
+//                self?.delegate?.showError(error: error)
+//            } else {
+//                WineCatalogViewModel.shared.fetchData()
+//            }
+        }
     }
 }

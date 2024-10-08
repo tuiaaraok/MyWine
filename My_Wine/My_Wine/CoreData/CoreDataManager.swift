@@ -145,4 +145,58 @@ class CoreDataManager {
         }
     }
     
+    func updateWineFavoriteStatus(wineID: UUID, isFavorite: Bool, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Wine> = Wine.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", wineID as CVarArg)
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                
+                if let wine = results.first {
+                    wine.isFavorite = isFavorite
+                    try backgroundContext.save()
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "Wine not found"]))
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+
+    func updateMyWineStatus(wineID: UUID, isMyWine: Bool, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Wine> = Wine.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", wineID as CVarArg)
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                
+                if let wine = results.first {
+                    wine.isMyWine = isMyWine
+                    try backgroundContext.save()
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion(NSError(domain: "", code: 404, userInfo: [NSLocalizedDescriptionKey: "Wine not found"]))
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+    
 }
