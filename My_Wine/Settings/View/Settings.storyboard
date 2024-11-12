@@ -2,8 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="upE-og-4WT">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -15,8 +17,9 @@
         <!--Navigation Controller-->
         <scene sceneID="Hy6-b7-eXt">
             <objects>
-                <navigationController navigationBarHidden="YES" id="upE-og-4WT" sceneMemberID="viewController">
+                <navigationController id="upE-og-4WT" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jVb-V3-aLZ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -104,6 +107,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="dCx-kf-Ymc"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="AFe-zw-74W" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="A3u-M7-1nk"/>
