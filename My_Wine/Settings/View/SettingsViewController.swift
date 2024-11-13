@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class SettingsViewController: UIViewController {
     @IBOutlet var settingButtons: [UIButton]!
@@ -16,6 +17,20 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func clickedContactUs(_ sender: UIButton) {
+        if MFMailComposeViewController.canSendMail() {
+            let mailComposeVC = MFMailComposeViewController()
+            mailComposeVC.mailComposeDelegate = self
+            mailComposeVC.setToRecipients(["ibrahimdemirel78@icloud.com"])            
+            present(mailComposeVC, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(
+                title: "Mail Not Available",
+                message: "Please configure a Mail account in your settings.",
+                preferredStyle: .alert
+            )
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+        }
     }
     
     @IBAction func clickedPrivacyPolicy(_ sender: UIButton) {
@@ -34,5 +49,11 @@ class SettingsViewController: UIViewController {
                 print("Unable to open App Store URL")
             }
         }
+    }
+}
+
+extension SettingsViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
