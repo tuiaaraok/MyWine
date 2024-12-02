@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.WineValuer.WV68Application</string>
+	<string>com.GrapeConnoisseur.WV76Application</string>
 	<key>PROJECT_ID</key>
 	<string>mywine-35295</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:120576620116:ios:64e709c976024e36c8dfc1</string>
+	<string>1:120576620116:ios:80699d1d5762cbfcc8dfc1</string>
 </dict>
 </plist>

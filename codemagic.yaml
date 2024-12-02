@@ -4,16 +4,16 @@ workflows:
     max_build_duration: 120
     instance_type: mac_mini_m1
     integrations:
-      app_store_connect: WineValuerWV68AppApiKey
+      app_store_connect: GrapeConnoisseurWV76AppApiKey
     environment:
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.WineValuer.WV68Application
+        bundle_identifier: com.GrapeConnoisseur.WV76Application
       vars:
-        BUNDLE_ID: "com.WineValuer.WV68Application"
+        BUNDLE_ID: "com.GrapeConnoisseur.WV76Application"
         XCODE_WORKSPACE: "My_Wine.xcworkspace" # <-- Put the name of your Xcode workspace here
         XCODE_SCHEME: "My_Wine" # <-- Put the name of your Xcode scheme here
-        APP_STORE_APPLE_ID: 6738093616
+        APP_STORE_APPLE_ID: 6738843862
       xcode: latest
       cocoapods: default
     scripts:

@@ -20,7 +20,7 @@ class SettingsViewController: UIViewController {
         if MFMailComposeViewController.canSendMail() {
             let mailComposeVC = MFMailComposeViewController()
             mailComposeVC.mailComposeDelegate = self
-            mailComposeVC.setToRecipients(["ibrahimdemirel78@icloud.com"])            
+            mailComposeVC.setToRecipients(["signor11@icloud.com"])            
             present(mailComposeVC, animated: true, completion: nil)
         } else {
             let alert = UIAlertController(
@@ -41,7 +41,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func clickedRateUs(_ sender: UIButton) {
-        let appID = "6738093616"
+        let appID = "6738843862"
         if let url = URL(string: "https://apps.apple.com/app/id\(appID)?action=write-review") {
             if UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)

@@ -25,9 +25,9 @@
 		6BAE884D2CE3BE9400407003 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE884C2CE3BE9400407003 /* Network.swift */; };
 		6BAE88502CE3BF8800407003 /* PrivacyWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE884F2CE3BF8800407003 /* PrivacyWebViewController.swift */; };
 		6BAE88522CE3C05E00407003 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE88512CE3C05E00407003 /* PrivacyPolicyViewController.swift */; };
-		6BAE88542CE3C1E800407003 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BAE88532CE3C1E800407003 /* GoogleService-Info.plist */; };
 		6BAE88562CE3C27F00407003 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE88552CE3C27F00407003 /* NavigationViewController.swift */; };
 		6BAE88582CE3C33300407003 /* codemagic.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 6BAE88572CE3C33300407003 /* codemagic.yaml */; };
+		6BBDCCD42CFDFE4600FEBA39 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BBDCCD32CFDFE4600FEBA39 /* GoogleService-Info.plist */; };
 		6BC339642CB1D71600B1C345 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC339632CB1D71600B1C345 /* TabBarViewController.swift */; };
 		6BC339662CB1D8D100B1C345 /* Jost-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BC339652CB1D8D100B1C345 /* Jost-Regular.ttf */; };
 		6BC339692CB1E13B00B1C345 /* WineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC339682CB1E13B00B1C345 /* WineModel.swift */; };
@@ -86,9 +86,9 @@
 		6BAE884C2CE3BE9400407003 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		6BAE884F2CE3BF8800407003 /* PrivacyWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyWebViewController.swift; sourceTree = "<group>"; };
 		6BAE88512CE3C05E00407003 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
-		6BAE88532CE3C1E800407003 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6BAE88552CE3C27F00407003 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		6BAE88572CE3C33300407003 /* codemagic.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = codemagic.yaml; sourceTree = "<group>"; };
+		6BBDCCD32CFDFE4600FEBA39 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6BC339632CB1D71600B1C345 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		6BC339652CB1D8D100B1C345 /* Jost-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost-Regular.ttf"; sourceTree = "<group>"; };
 		6BC339682CB1E13B00B1C345 /* WineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WineModel.swift; sourceTree = "<group>"; };
@@ -322,8 +322,8 @@
 				6BE4DA2E2CB17DF6003846F4 /* AppDelegate.swift */,
 				6BE4DA302CB17DF6003846F4 /* SceneDelegate.swift */,
 				6BE4DA3A2CB17DF8003846F4 /* Assets.xcassets */,
+				6BBDCCD32CFDFE4600FEBA39 /* GoogleService-Info.plist */,
 				6BE4DA3C2CB17DF8003846F4 /* LaunchScreen.storyboard */,
-				6BAE88532CE3C1E800407003 /* GoogleService-Info.plist */,
 				6BE4DA3F2CB17DF8003846F4 /* Info.plist */,
 				6BAE88462CE3B5F400407003 /* My_Wine.xcdatamodeld */,
 			);
@@ -530,13 +530,13 @@
 				6BE4DA632CB1D220003846F4 /* Catalog.storyboard in Resources */,
 				6BE4DA502CB1ADC6003846F4 /* Roboto-Medium.ttf in Resources */,
 				6BE4DA4E2CB1AC87003846F4 /* Jost-Medium.ttf in Resources */,
-				6BAE88542CE3C1E800407003 /* GoogleService-Info.plist in Resources */,
 				6BE1FC2A2CB44FBE00FD9A5F /* FilterViewController.xib in Resources */,
 				6BE4DA6A2CB1D28C003846F4 /* Favorites.storyboard in Resources */,
 				6BE4DA4C2CB1AC2C003846F4 /* Jost-Light.ttf in Resources */,
 				6BAE88582CE3C33300407003 /* codemagic.yaml in Resources */,
 				6BC339662CB1D8D100B1C345 /* Jost-Regular.ttf in Resources */,
 				6BE4DA522CB1AE98003846F4 /* Inter-Regular.ttf in Resources */,
+				6BBDCCD42CFDFE4600FEBA39 /* GoogleService-Info.plist in Resources */,
 				6BE4DA362CB17DF6003846F4 /* Base in Resources */,
 				6BC339702CB1E7A900B1C345 /* WineFormViewController.xib in Resources */,
 			);
@@ -791,8 +791,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.WineValuer.WV68Application;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GrapeConnoisseur.WV76Application;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -824,8 +824,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.WineValuer.WV68Application;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GrapeConnoisseur.WV76Application;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

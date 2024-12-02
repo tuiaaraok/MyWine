@@ -10,7 +10,7 @@ import WebKit
 
 class PrivacyPolicyViewController: UIViewController {
     private var webView: WKWebView!
-    private let urlString = "https://docs.google.com/document/d/10f50Wa9BMLyEfPpPiKPhXrZ2Uqhugy42nvs8OrWSr94/mobilebasic"
+    private let urlString = "https://docs.google.com/document/d/1giyA1pqwTkL8d-Omg4FialIo0xDBI3_SzIgfHRq8BVk/mobilebasic"
     
     override func viewDidLoad() {
         super.viewDidLoad()
