@@ -21,7 +21,6 @@
 		6BA5332A2CB52EC5002AED26 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA533292CB52EC5002AED26 /* FavoritesViewModel.swift */; };
 		6BA95D832CB4926B00429501 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA95D822CB4926B00429501 /* BaseButton.swift */; };
 		6BA95D852CB492DD00429501 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA95D842CB492DD00429501 /* String.swift */; };
-		6BAE88482CE3B5F400407003 /* My_Wine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE88462CE3B5F400407003 /* My_Wine.xcdatamodeld */; };
 		6BAE884D2CE3BE9400407003 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE884C2CE3BE9400407003 /* Network.swift */; };
 		6BAE88502CE3BF8800407003 /* PrivacyWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE884F2CE3BF8800407003 /* PrivacyWebViewController.swift */; };
 		6BAE88522CE3C05E00407003 /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE88512CE3C05E00407003 /* PrivacyPolicyViewController.swift */; };
@@ -62,6 +61,7 @@
 		6BE4DA6A2CB1D28C003846F4 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE4DA692CB1D28C003846F4 /* Favorites.storyboard */; };
 		6BE4DA722CB1D2E5003846F4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE4DA712CB1D2E5003846F4 /* SettingsViewController.swift */; };
 		6BE4DA742CB1D2ED003846F4 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE4DA732CB1D2ED003846F4 /* Settings.storyboard */; };
+		6BEB94BA2D13F4FC0097C98A /* My_Wine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BEB94B82D13F4FC0097C98A /* My_Wine.xcdatamodeld */; };
 		8CF5508D572A2E5EFEEC241A /* Pods_My_Wine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B4EAB700483988B27A4B8A /* Pods_My_Wine.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,7 +82,6 @@
 		6BA533292CB52EC5002AED26 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		6BA95D822CB4926B00429501 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		6BA95D842CB492DD00429501 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		6BAE88472CE3B5F400407003 /* My_Wine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_Wine.xcdatamodel; sourceTree = "<group>"; };
 		6BAE884C2CE3BE9400407003 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		6BAE884F2CE3BF8800407003 /* PrivacyWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyWebViewController.swift; sourceTree = "<group>"; };
 		6BAE88512CE3C05E00407003 /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +123,7 @@
 		6BE4DA692CB1D28C003846F4 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		6BE4DA712CB1D2E5003846F4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		6BE4DA732CB1D2ED003846F4 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		6BEB94B92D13F4FC0097C98A /* My_Wine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_Wine.xcdatamodel; sourceTree = "<group>"; };
 		9F92C5C701DF27AC66E44E49 /* Pods-My_Wine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My_Wine.release.xcconfig"; path = "Target Support Files/Pods-My_Wine/Pods-My_Wine.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -325,7 +325,7 @@
 				6BBDCCD32CFDFE4600FEBA39 /* GoogleService-Info.plist */,
 				6BE4DA3C2CB17DF8003846F4 /* LaunchScreen.storyboard */,
 				6BE4DA3F2CB17DF8003846F4 /* Info.plist */,
-				6BAE88462CE3B5F400407003 /* My_Wine.xcdatamodeld */,
+				6BEB94B82D13F4FC0097C98A /* My_Wine.xcdatamodeld */,
 			);
 			path = My_Wine;
 			sourceTree = "<group>";
@@ -594,8 +594,8 @@
 				6BA5332A2CB52EC5002AED26 /* FavoritesViewModel.swift in Sources */,
 				6BE4DA612CB1D218003846F4 /* CatalogViewController.swift in Sources */,
 				6BA533272CB52E88002AED26 /* MyWineViewModel.swift in Sources */,
-				6BAE88482CE3B5F400407003 /* My_Wine.xcdatamodeld in Sources */,
 				6B672BFA2CB45B8A00096C0C /* Filter.swift in Sources */,
+				6BEB94BA2D13F4FC0097C98A /* My_Wine.xcdatamodeld in Sources */,
 				6BE4DA672CB1D264003846F4 /* FavoritesViewController.swift in Sources */,
 				6BE4DA5B2CB1D1BB003846F4 /* MyWineViewController.swift in Sources */,
 				6B672C032CB4803600096C0C /* WineFormViewModel.swift in Sources */,
@@ -791,7 +791,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.GrapeConnoisseur.WV76Application;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -824,7 +824,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.GrapeConnoisseur.WV76Application;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -878,14 +878,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		6BAE88462CE3B5F400407003 /* My_Wine.xcdatamodeld */ = {
+		6BEB94B82D13F4FC0097C98A /* My_Wine.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6BAE88472CE3B5F400407003 /* My_Wine.xcdatamodel */,
+				6BEB94B92D13F4FC0097C98A /* My_Wine.xcdatamodel */,
 			);
-			currentVersion = 6BAE88472CE3B5F400407003 /* My_Wine.xcdatamodel */;
-			name = My_Wine.xcdatamodeld;
-			path = /Users/karenkhachatryan/XCodeProjects/Aezakmi/My_Wine/My_Wine/My_Wine.xcdatamodeld;
+			currentVersion = 6BEB94B92D13F4FC0097C98A /* My_Wine.xcdatamodel */;
+			path = My_Wine.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
